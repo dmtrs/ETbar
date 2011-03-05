@@ -1,0 +1,52 @@
+ETbar a web toolbar widget for yiiframework
+===========================================
+Author: Dimitrios Mengidis
+Version: 0.1 Alpha
+
+Install
+-------
+1. Extract zip file under the protected/extensions like:
+
+  protected/
+    extensions/
+      ETbar/
+        ETbar.php -- The class extending the CWidget
+        etbar.css -- The css file
+        etbar.js  -- The javascript file
+
+2. Add import of extension to your conif file ( protected/config/main.pph ) like:
+
+   'imports'=>array(
+       ....
+       'application.extensions.ETbar.*',
+    ),
+
+Use:
+----
+
+1. init widget in the view file:
+
+   $this->beginWidget('ETbar');
+   echo "<div> content of the bar </div>";
+   $this->endWidghet();
+
+Notice:
+-------
+
+The version is Alpha so there is nothing there. You must customize the css file as well as the css of the elements in the bar. There is only onload animation js script so do not expect something amazing.
+
+Forks of project and contributions wanted. Please check the repository at:
+http://www.github.com/dmtrs/ETbar or contact.
+Thanks.
+   
+Changelog
+---------
++ version next:
+  - Be able to set css and js values from widget constructor. Related attributes like:
+      * height of bar.
+      * color/transaprency of bar
+  - Add minimize button.
++ version 0.1:
+  - Working widget.
+  - Css file for basic properties.
+  - Js file for on document ready toggle.
