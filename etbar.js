@@ -1,5 +1,5 @@
 /*<![CDATA[*/
 $(document).ready(function() {
-    $('.toolbar').css({height: 0}).animate({height: '38'}, "slow");
+    $('.etbar').css({height: 0}).animate({height: '150'}, "slow");
 });
 /*]]>*/ 

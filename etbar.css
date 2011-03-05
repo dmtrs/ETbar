@@ -1,11 +1,134 @@
-div.toolbar 
+div.etbar
 {
     overflow: hidden;
+/* fullscreen*/
     width: 100%;
+ /*
+ * small
+    width:80%;
+    padding-left:10%;
+    padding-right:10%;*/
+
+
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: yellow;
     height: 0px;
     display: block;
+}
+div.etbar_content
+{
+    background-color: #B2ADA4;
+    opacity: 0.7;
+    /*display: block;*/
+    height: 100%;
+    width: 100%;
+
+
+/* I don't use bottom padding, 
+ * I reduce the height of the
+ * items.*/
+    padding-top: 0.5%;
+
+/* This depends if side_panel right/left */
+    padding-left: 1%;
+    padding-right:50%; 
+
+}
+div.etbar_clistview
+{
+    background-color: #B2ADA4;
+    opacity: 0.7;
+    display: block;
+    height: 78%;
+
+    
+/*    padding-top: 10%; */
+/* I don't use bottom padding, 
+ * I reduce the height of the
+ * items.*/
+/*    padding-top: 0.5%;*/
+  
+
+/* This depends if side_panel right/left */
+    padding-left: 1%;
+    padding-right: 21%;
+
+/**    padding-right:50%; */
+
+}
+div.etbar_clistview_summary
+{
+}
+div.etbar_clistview_content
+{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+div.etbar_clistview_pager
+{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    padding-right: 21%;
+    /* fail align of pager */
+    padding-left:60%;
+    height: 12%;
+    background-color: #B2ADA4;
+
+}
+/* This is vertical items */
+div.etbar_content_item
+{
+    margin: 0.2% 0.2% 0.2% 0.2%;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: black;
+    display: block;
+    height: 80%;
+    float: left;
+    background-color: #B2ADA4;
+    width:19%;
+}
+div.etbar_top_panel
+{
+    height: 10%;
+    width: 100%;
+    border-width: 1px;
+    border-color: black;
+    border-style: dashed;
+    display: block;
+    opacity: 0.85;
+    background-color: #353431;
+}
+div.etbar_top_panel_item
+{
+    height: 100%;
+    width: 60px;
+    float: right;
+
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #EBEBEA;
+    font-color: #EBEBEA;
+    display: block; 
+}
+div.etbar_side_panel
+{
+    height: 150px;
+    width: 20%;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #EBEBEA;
+    font-color: #EBEBEA;
+
+    background-color: #767675;
+    display: block; 
+    opacity: 0.6;
 }

@@ -26,11 +26,18 @@ class ETbar extends CWidget
     public function init()
     {
         $this->registerScripts();
-        echo CHtml::tag('div', array('class'=>'toolbar'), false, false);
         parent::init();
     }
     public function run()
     {
+        // This must be passed to extension as data       
+		$dataProvider=new CActiveDataProvider('Etbarmodel',array(
+            'pagination'=>array('pageSize'=>5),
+        ));
+
+		$this->render('etbar',array(
+			'dataProvider'=>$dataProvider,
+		));
         parent::run();
     }
 }
