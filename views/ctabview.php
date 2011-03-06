@@ -14,7 +14,16 @@ echo "<div id='etbar_top_panel'>";
 echo "<ul>";
 echo "<li><a href='#tabs-1'>Horizontal</a></li>";
 echo "<li><a href='#tabs-2'>Vertical</a></li>";
-echo "<li onclick=\"$('#etbar_tabs').animate({height: '320'}, 'slow');\" >X</li>";
+echo "<li onclick=\"
+    var h = $('#etbar_tabs').css('height');
+    var leng = h.length;
+    var height = h.substring(0, leng-2);
+    if( height > 50 ) {
+        var myheight = 47;
+    } else {
+        var myheight = 320;
+    }
+    $('#etbar_tabs').animate({height: myheight}, 'slow');\" >X</li>";
 echo "</ul>";
 echo "</div>";
 
