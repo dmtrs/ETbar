@@ -11,10 +11,12 @@ class ETbar extends CWidget
         if($this->css===null) {
             $cssPath = dirname(__FILE__).DIRECTORY_SEPARATOR;
             $cssFiles = array('jquery-ui.tabs.css', 'etbar_tabs.css');
+
+            $css = Yii::app()->getAssetManager()->publish($cssPath.'temp');
             foreach($cssFiles as $file)
             {
-                $css = Yii::app()->getAssetManager()->publish($cssPath.$file);
-                $cs->registerCssFile($css);
+                //$css = Yii::app()->getAssetManager()->publish($cssPath.$file);
+                $cs->registerCssFile($css."/$file");
             }
         }
         if($this->js===null) {
@@ -30,6 +32,7 @@ class ETbar extends CWidget
             $cs->registerCoreScript('jquery.ui');
         //}**/
         $cs->registerScriptFile($this->js, CClientScript::POS_BEGIN);
+
     }
     public function init()
     {

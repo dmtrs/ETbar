@@ -1,0 +1,69 @@
+#main1
+{
+    height: 0px;
+}
+.ui-tabs
+{
+    position: fixed;
+    left:0;
+    bottom:0;
+    /* height: 320px;*/
+    overflow: hidden;
+    /* width does not work due to scroll bar */
+    width: 95%;
+    margin-left:2.5%;
+    margin-left:2.5%;
+}
+.ui-tab-nav
+{
+    height: 20%;
+}
+.ui-tabs-panel
+{
+    height: 80%;
+}
+.etbar_clistview
+{
+    position: relative;
+    height: 100%;
+    margin-right: 20%;
+}
+.etbar_clistview_summary
+{
+    width: 100%;
+    height:10%;
+}
+.etbar_clistview_pager
+{
+    position: relative;
+    width: 100%;
+    height:10%;
+    top:0;
+}
+.etbar_clistview_container
+{
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+.etbar_clistview_vertical_item
+{
+    float: left;
+    display: block;
+    height: 100%;
+/**    width: 20%; **/
+}
+.etbar_clistview_horizontal_item
+{
+    float: top;
+    display: block;
+    width:100%;
+}
+.etbar_icon_rb
+{
+    position: absolute;
+    margin-bottom: 7px;
+    margin-right: 7px;
+    right: 0;
+    bottom: 0;
+}
