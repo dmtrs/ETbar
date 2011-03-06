@@ -39,7 +39,7 @@ div.etbar_clistview
 {
     background-color: #B2ADA4;
     opacity: 0.7;
-    display: block;
+/**    display: none !important;**/
     height: 78%;
 
     
@@ -138,3 +138,9 @@ div.etbar_side_panel
     display: block; 
     opacity: 0.6;
 }
+/** jquery ui tab css 
+.ui-tab-hide
+{
+    display: none !important;
+}
+**/

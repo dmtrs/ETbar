@@ -1,20 +1,19 @@
 <?php
     //Main container 
-    echo CHtml::openTag('div', array('class'=>'etbar'));
+    echo CHtml::openTag('div', array('class'=>'etbar', 'id'=>'etbar_tabs'));
     //Panel container
     echo CHtml::openTag('div', array(
         'class'=>'etbar_top_panel'
     ));
 
     //Panel Item
+
     for($i=0; $i < 3; $i++)
     {
         echo CHtml::openTag('div', 
             array('class'=>'etbar_top_panel_item',
-            'onclick'=>"$('#clistview_$i').toggle();",
-            'id'=>'id_'.$i,
         ));
-        echo "HELLO";
+        echo CHtml::link("Link $i", "#tabs-$i");
         echo CHtml::closeTag('div');
     }
     echo CHtml::closeTag('div');
@@ -23,7 +22,7 @@
     //Find a way to change the view
 //    echo CHtml::openTag('div', array('class'=>'etbar_content'));
     $this->widget('zii.widgets.CListView', array(
-        'id'=>'clistview_0',
+        'id'=>'tabs-1',
 	    'dataProvider'=>$dataProvider,
         //'itemView'=>'application.views.'.lcfirst($dataProvider->modelClass).'._view',
         'itemView'=>'clistview',
@@ -36,8 +35,7 @@
     for($i=1; $i < 3; $i++) {
         echo CHtml::openTag('div', array(
                 'class'=>'etbar_clistview',
-                'style'=>'height: 100%',
-                'id'=>"clistview_$i",));
+                'id'=>"tabs-$i",));
         echo "CLISTVIEW_$i";
         echo CHtml::closeTag('div');
     }

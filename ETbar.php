@@ -9,18 +9,26 @@ class ETbar extends CWidget
         $cs = Yii::app()->clientScript;
 
         if($this->css===null) {
-            $cssFile = dirname(__FILE__).DIRECTORY_SEPARATOR.'etbar.css';
-            $this->css = Yii::app()->getAssetManager()->publish($cssFile);
+            $cssPath = dirname(__FILE__).DIRECTORY_SEPARATOR;
+            $cssFiles = array('jquery-ui.tabs.css', 'etbar_tabs.css');
+            foreach($cssFiles as $file)
+            {
+                $css = Yii::app()->getAssetManager()->publish($cssPath.$file);
+                $cs->registerCssFile($css);
+            }
         }
         if($this->js===null) {
             $jsFile = dirname(__FILE__).DIRECTORY_SEPARATOR.'etbar.js';
             $this->js = Yii::app()->getAssetManager()->publish($jsFile);
         }
-        $cs->registerCssFile($this->css);
 
         if(!$cs->isScriptRegistered('jquery')) {
             $cs->registerCoreScript('jquery');
-        }
+            $cs->registerCoreScript('jquery.ui');
+        }/**
+        if(!$cs->isScriptRegistered('jquery-ui')) {
+            $cs->registerCoreScript('jquery.ui');
+        //}**/
         $cs->registerScriptFile($this->js, CClientScript::POS_BEGIN);
     }
     public function init()
@@ -32,12 +40,12 @@ class ETbar extends CWidget
     {
         // This must be passed to extension as data       
 		$dataProvider=new CActiveDataProvider('Etbarmodel',array(
-            'pagination'=>array('pageSize'=>5),
+            'pagination'=>array('pageSize'=>4),
         ));
 
-		$this->render('etbar',array(
+		$this->render('ctabview',array(
 			'dataProvider'=>$dataProvider,
 		));
-        parent::run();
+        //parent::run();
     }
 }
