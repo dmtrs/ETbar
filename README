@@ -1,7 +1,7 @@
 ETbar a web toolbar widget for yiiframework
 -------------------------------------------
 Author: Dimitrios Mengidis
-Version: 0.1 Alpha
+Version: 0.2 Alpha
 
 ###Install
 
@@ -46,6 +46,10 @@ Thanks.
         - height of bar.
         - color/transaprency of bar
     - Add minimize button.
+    - pass dataprovider at the ETbar init
+
+- version 0.2:
+    - Support clistview of a model
 - version 0.1:
   - Working widget.
   - Css file for basic properties.

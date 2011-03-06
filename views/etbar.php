@@ -2,34 +2,45 @@
     //Main container 
     echo CHtml::openTag('div', array('class'=>'etbar'));
     //Panel container
-    echo CHtml::openTag('div', array('class'=>'etbar_top_panel'));
-    echo "Panel";
+    echo CHtml::openTag('div', array(
+        'class'=>'etbar_top_panel'
+    ));
 
     //Panel Item
-/**    echo CHtml::openTag('div', array('class'=>'etbar_top_panel_item') );
-    echo CHtml::closeTag('div');**/
+    for($i=0; $i < 3; $i++)
+    {
+        echo CHtml::openTag('div', 
+            array('class'=>'etbar_top_panel_item',
+            'onclick'=>"$('#clistview_$i').toggle();",
+            'id'=>'id_'.$i,
+        ));
+        echo "HELLO";
+        echo CHtml::closeTag('div');
+    }
     echo CHtml::closeTag('div');
 
     //Content container
     //Find a way to change the view
 //    echo CHtml::openTag('div', array('class'=>'etbar_content'));
     $this->widget('zii.widgets.CListView', array(
+        'id'=>'clistview_0',
 	    'dataProvider'=>$dataProvider,
         //'itemView'=>'application.views.'.lcfirst($dataProvider->modelClass).'._view',
         'itemView'=>'clistview',
         'itemsCssClass'=>'etbar_clistview_content',
         'pagerCssClass'=>'etbar_clistview_pager',
         'summaryCssClass'=>'etbar_clistview_summary',
-        'htmlOptions'=>array('class'=>'etbar_clistview'),
+        'htmlOptions'=>array('class'=>'etbar_clistview',
+        ),
     )); 
-    /**Content items
-    for($i=0; $i < 2; $i++) {
+    for($i=1; $i < 3; $i++) {
         echo CHtml::openTag('div', array(
-                'class'=>'etbar_content_item', 
-                'style'=>'width: 20%;'));
-        echo $i;
+                'class'=>'etbar_clistview',
+                'style'=>'height: 100%',
+                'id'=>"clistview_$i",));
+        echo "CLISTVIEW_$i";
         echo CHtml::closeTag('div');
-    }**/
+    }
 
 //    echo CHtml::closeTag('div');
 
