@@ -35,10 +35,10 @@
 }
 .etbar_clistview_pager
 {
-    position: relative; /* absolute;*/
+    position: relative;
     width: 100%;
     height:10%;
-/*    bottom: 0;*/
+    top:0;
 }
 .etbar_clistview_container
 {
