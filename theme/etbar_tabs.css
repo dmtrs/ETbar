@@ -26,7 +26,7 @@
 {
     position: relative;
     height: 100%;
-    margin-right: 20%;
+/*    margin-right: 20%; Side Panel */
 }
 .etbar_clistview_summary
 {
@@ -43,8 +43,8 @@
 .etbar_clistview_container
 {
     width: 100%;
-    margin-bottom: 5%;
-    margin-top: 2%;
+/*    margin-bottom: 5%; */
+/*    margin-top: 2%; */
 }
 .etbar_clistview_vertical_item
 {

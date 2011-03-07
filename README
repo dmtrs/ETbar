@@ -1,7 +1,7 @@
 ETbar a web toolbar widget for yiiframework
 -------------------------------------------
 Author: Dimitrios Mengidis
-Version: 0.3 Alpha
+Version: 0.3 Beta
 
 ###Testing browsers
 
@@ -40,7 +40,7 @@ Version: 0.3 Alpha
     'tabs'=>array(
         'Tab Tittle'=>'String', // the string will be html encoded
         'CListView'=>array(
-            'data'=>$dataprovider, //CDataProvider
+            'dataProvider'=>$dataprovider, //CDataProvider
             'widget'=>ETbar::CLIST, 
             'itemview'=>'_view.php', //optional default to views/model/_view.php
             'viewData'=>array(),        

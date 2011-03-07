@@ -13,6 +13,8 @@ class ETbar extends CWidget
      * @var array()
      **/
     public $tabs = array();
+    
+    const CLIST = 0;
 
     private $css;
     private $js;
