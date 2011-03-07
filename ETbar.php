@@ -1,6 +1,19 @@
 <?php
 class ETbar extends CWidget
 {
+    /**
+     * All the ETbar options for start
+     *
+     * @var array()
+     **/
+    public $options = array();
+    /** 
+     * Tab data
+     * 
+     * @var array()
+     **/
+    public $tabs = array();
+
     private $css;
     private $js;
 
@@ -35,12 +48,12 @@ class ETbar extends CWidget
 
     }
     public function init()
-    {
+    {    
         $this->registerScripts();
         parent::init();
     }
     public function run()
-    {
+    {/**
         // This must be passed to extension as data       
 		$dataProvider=new CActiveDataProvider('Etbarmodel',array(
             'pagination'=>array('pageSize'=>4),
@@ -49,6 +62,7 @@ class ETbar extends CWidget
 		$this->render('ctabview',array(
 			'dataProvider'=>$dataProvider,
 		));
-        //parent::run();
+        //parent::run();**/
+        $this->render('etbar_view');
     }
 }
