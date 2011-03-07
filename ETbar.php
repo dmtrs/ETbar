@@ -53,7 +53,7 @@ class ETbar extends CWidget
         parent::init();
     }
     public function run()
-    {/**
+    {
         // This must be passed to extension as data       
 		$dataProvider=new CActiveDataProvider('Etbarmodel',array(
             'pagination'=>array('pageSize'=>4),
@@ -63,6 +63,6 @@ class ETbar extends CWidget
 			'dataProvider'=>$dataProvider,
 		));
         //parent::run();**/
-        $this->render('etbar_view');
+ //       $this->render('etbar_view');
     }
 }
