@@ -1,10 +1,10 @@
 <script>/**
 $(document).ready(function() {
     $('#etbar_tabs').css({height: 0}).animate({height: '300'}, 'slow');
-});**/
+});
 $(function() {
     $( "#etbar_tabs" ).tabs();
-});
+});**/
 </script>
 <?php
 $width = (int)(100/(int)$dataProvider->pagination->pageSize);

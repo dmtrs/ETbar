@@ -1,10 +1,3 @@
-<script>
-$(function() {
-    $(document).ready(function() { $("#etbar_tabs").css({height: 50});
-    });
-    $( "#etbar_tabs" ).tabs();
-});
-</script>
 <?php
 echo CHtml::openTag('div',array('id'=>'etbar_tabs'));
 
@@ -12,7 +5,12 @@ echo "<div id='etbar_top_panel'>";
 echo "<ul>";
 foreach($this->tabs as $k => $tab)
 {
-    echo "<li><a href='#tabs-$k'>".key($tab)."</a></li>";
+    $title = key($tab);
+//    if(strpos($title, '<img') === 0 ) {
+//        echo "<li><a style='padding: 0 1em 0.5em; margin-top: 0.5em;' href='#tabs-$k'>".key($tab)."</a></li>";
+//    } else {
+        echo "<li><a href='#tabs-$k'>".key($tab)."</a></li>";
+//    }
 }
 //{
 //echo "<li><a href='#tabs-2'>Vertical</a></li>";
@@ -24,7 +22,7 @@ echo "<span class=\"etbar_icon_rb ui-icon ui-icon-grip-diagonal-se\" onclick=\"
         var myheight = 47;
         var cur = 'n-resize';
     } else {
-        var myheight = 280;
+        var myheight = 320;
         var cur = 's-resize';
     }
         $(this).css({cursor: cur});
@@ -46,19 +44,9 @@ foreach($this->tabs as $k=>$tabData)
                 $c = $this->getController();
                 $c->renderPartial('application.extension.tbar.views.etbar_clistview', $tab);
                 **/
-                //$this->render('etbar_clistview', $tab);
-                $x = (int)(100/(int)$tab["dataProvider"]->pagination->pageSize);
-                $this->widget('zii.widgets.CListView', array(
-                    'id'=>uniqid().'_horizontal_clistview',
-            	    'dataProvider'=>$tab["dataProvider"],
-                    'itemView'=>$tab["itemView"],
-                    'itemsCssClass'=>'etbar_clistview_container',
-                    'pagerCssClass'=>'etbar_clistview_pager',
-                    'summaryCssClass'=>'etbar_clistview_summary',
-                    'viewData'=>array('x'=>$x),
-                    'htmlOptions'=>array('class'=>'etbar_clistview',
-                ),
-                )); 
+                $tab["id"] = $k;
+                $this->render('etbar_clistview', $tab);
+
             }           
         } else {
             echo "<script>
@@ -69,7 +57,7 @@ foreach($this->tabs as $k=>$tabData)
                     success: function(data) { 
                         $('#tabs-$k').html(data);
                     }});
-            });
+            })
             </script>";
         }
     }
@@ -79,4 +67,4 @@ echo "</div>";// main panel
 
 
 echo "</div>"; //etbar
-7?>
+

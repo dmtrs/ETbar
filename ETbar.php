@@ -63,8 +63,8 @@ class ETbar extends CWidget
 
 		$this->render('ctabview',array(
 			'dataProvider'=>$dataProvider,
-		));
-        //parent::run();**/
+		));**/
+        //parent::run();
         $this->render('etbar_view');
     }
 }

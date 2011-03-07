@@ -69,3 +69,8 @@
     bottom: 0;
     cursor: n-resize;
 }
+/* For images in the tabs*/
+.etbar_icon_tab
+{
+    padding: 0;
+}
