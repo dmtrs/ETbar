@@ -12,7 +12,7 @@ class ETbar extends CWidget
             $cssPath = dirname(__FILE__).DIRECTORY_SEPARATOR;
             $cssFiles = array('jquery-ui.tabs.css', 'etbar_tabs.css');
 
-            $css = Yii::app()->getAssetManager()->publish($cssPath.'temp');
+            $css = Yii::app()->getAssetManager()->publish($cssPath.'theme');
             foreach($cssFiles as $file)
             {
                 //$css = Yii::app()->getAssetManager()->publish($cssPath.$file);

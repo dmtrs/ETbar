@@ -59,6 +59,7 @@
     display: block;
     width:100%;
 }
+/* Resize button */
 .etbar_icon_rb
 {
     position: absolute;
@@ -66,4 +67,5 @@
     margin-right: 7px;
     right: 0;
     bottom: 0;
+    cursor: n-resize;
 }

@@ -20,9 +20,12 @@ echo "<span class=\"etbar_icon_rb ui-icon ui-icon-grip-diagonal-se\" onclick=\"
     var height = h.substring(0, leng-2);
     if( height > 50 ) {
         var myheight = 47;
+        var cur = 'n-resize';
     } else {
         var myheight = 320;
+        var cur = 's-resize';
     }
+        $(this).css({cursor: cur});
     $('#etbar_tabs').animate({height: myheight}, 'slow');\" />";
 echo "</ul>";
 echo "</div>";
