@@ -3,24 +3,16 @@ ETbar a web toolbar widget for yiiframework
 Author: Dimitrios Mengidis
 Version: 0.3 Beta
 
-###Testing browsers
+####Testing browsers
 
 - Mozilla Firefox 3.6.13
 - Opera 11.00. Build 1176 for Linux.
 
 ###Install
 
-1. Extract zip file under the protected/extensions like:
+1. Extract zip file under the protected/extensions.
 
-  protected/
-    extensions/
-      ETbar/
-        ETbar.php -- The class extending the CWidget
-        etbar.css -- The css file
-        etbar.js  -- The javascript file
-
-
-2. Add import of extension to your conif file ( protected/config/main.pph ) like:
+2. Add import of extension to your config file ( protected/config/main.pph ) like:
 
    'imports'=>array(
        ....
@@ -31,27 +23,23 @@ Version: 0.3 Beta
 
 1. init widget in the view file:
 
-   $this->beginWidget('ETbar');
-   echo "<div> content of the bar </div>";
-   $this->endWidghet();
+    $this->beginWidget('ETbar', array(
+        'tabs'=>array(
+            'Tab Tittle'=>'String', //Static contented that will be echoed in tab1
+            'CListView'=>array(     //A CListView in tab2
+                'dataProvider'=>$dataprovider, //CDataProvider
+                'widget'=>ETbar::CLIST, 
+                'itemView'=>'my_view',
+             ),
+        ),
+    ));
 
-###Creating tabs:
+####Notice
+At the current version and the above example clisview will try to look for a view under:
+protected/extensions/ETbar/views/my_view.php
+This will be changed in next versions, and it will look in the views/modename/my_view.php
 
-    'tabs'=>array(
-        'Tab Tittle'=>'String', // the string will be html encoded
-        'CListView'=>array(
-            'dataProvider'=>$dataprovider, //CDataProvider
-            'widget'=>ETbar::CLIST, 
-            'itemview'=>'_view.php', //optional default to views/model/_view.php
-            'viewData'=>array(),        
-         ),
-    ),
-
-###Notice:
-
-The version is Alpha so there is nothing there. You must customize the css file as well as the css of the elements in the bar. There is only onload animation js script so do not expect something amazing.
-
-####Forks of project and contributions wanted. Links:
+###Links:
 [Repositorie](http://www.github.com/dmtrs/ETbar) or contact.
 [Contact me](http://www.yiiframework.com/forum/index.php?showuser=4786)
 Thanks.
@@ -62,12 +50,19 @@ Thanks.
     - Be able to set css and js values from widget constructor. Related attributes like:
         - height of bar.
         - color/transaprency of bar
-    - pass dataprovider at the ETbar init
-- version 0.3
+    - The clisview and other widget to look for views under protected/view depend the model
+    - support CGridView, CAciveForm, CDetailView
+    - add init( ... "options"=>array("theme"=>"selectable theme"))
+
+- version 0.3 beta
     - jquery tabs, themes added
     - added resize button 
+    - resizable/dragable functionality added
+    - worked on basic init of object
+    - support of jquery ui themes
 - version 0.2:
     - Support clistview of a model
+
 - version 0.1:
   - Working widget.
   - Css file for basic properties.
