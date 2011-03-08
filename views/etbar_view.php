@@ -6,15 +6,11 @@ echo "<ul>";
 foreach($this->tabs as $k => $tab)
 {
     $title = key($tab);
-//    if(strpos($title, '<img') === 0 ) {
-//        echo "<li><a style='padding: 0 1em 0.5em; margin-top: 0.5em;' href='#tabs-$k'>".key($tab)."</a></li>";
-//    } else {
-        echo "<li><a href='#tabs-$k'>".key($tab)."</a></li>";
-//    }
+    echo "<li><a href='#tabs-$k'>".key($tab)."</a></li>";
 }
-//{
-//echo "<li><a href='#tabs-2'>Vertical</a></li>";
-echo "<span class=\"etbar_icon_rb ui-icon ui-icon-grip-diagonal-se\" onclick=\"
+echo "</ul>";
+echo "<div class=\"etbar_icon_rb\" onclick=\"
+    $('#etbar_tabs').css({top: ''});
     var h = $('#etbar_tabs').css('height');
     var leng = h.length;
     var height = h.substring(0, leng-2);
@@ -25,9 +21,9 @@ echo "<span class=\"etbar_icon_rb ui-icon ui-icon-grip-diagonal-se\" onclick=\"
         var myheight = 320;
         var cur = 's-resize';
     }
-        $(this).css({cursor: cur});
-    $('#etbar_tabs').animate({height: myheight}, 'slow');\" />";
-echo "</ul>";
+    $(this).css({cursor: cur});
+    $('#etbar_tabs').animate({height: myheight}, 'slow');
+    \"></div>";
 echo "</div>"; //etbar_top_panel
 
 echo "<div id='etbar_main_panel'>";
@@ -64,7 +60,5 @@ foreach($this->tabs as $k=>$tabData)
     echo "</div>";
 }
 echo "</div>";// main panel 
-
-
 echo "</div>"; //etbar
 

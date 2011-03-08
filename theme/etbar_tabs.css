@@ -68,9 +68,21 @@
     right: 0;
     bottom: 0;
     cursor: n-resize;
+    background-image: url("images/ui-icons_98d2fb_256x240.png");
+    background-position: -80px -224px;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -99999px;
 }
 /* For images in the tabs*/
 .etbar_icon_tab
 {
     padding: 0;
+}
+#etbar_tabs
+{
+    background: rgba(0,0,0,0.8);
 }
